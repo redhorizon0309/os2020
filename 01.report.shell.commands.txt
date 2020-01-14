@@ -1,0 +1,214 @@
+echo [option] [string]
+Displaying a text
+
+$echo hello world
+output
+hello world
+
+[options]:
+	\b remove all space between text
+	\c end proccess & stay on the same line(need -e to work)
+	\n create a new line
+	\t create horizontal tab space 
+	\c create vertical tab space
+	\r carriage return(need -e to work)
+	\a alert
+	-n stay on same line
+	-e enable interpretation of "\"
+
+
+passwd [option] [username]
+change the user account password
+
+$passwd
+output
+Changing password for pc1.
+(current) UNIX password: 
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+
+[options]
+	-d, --delete delete password, account have no password
+	-e, –-expire expire password immediately
+	h, –-help display help
+	-i, –-inactive [int INACTIVE_DAYS] set days between password expire & account deactivated
+	-k, –-keep-tokens change password if expire
+	-l, –-lock lock password user
+	-n, –-mindays [int MIN_DAYS] set min days between password changes
+	-q, –-quiet silent the echo of "Changing password for user"
+	-S, –-status show passwd status
+	-S -a, -status -all show password status of all users
+	-u, --unlock unlock the password of an account
+	-w, --warndays [int WARN_DAYS] set days warning before expire
+	-x, --maxdays [int MAX_DAYS] set max days password remain valid
+	
+date [OPTION] [+FORMAT]
+display current date and time
+
+$date
+output
+Tue Jan 14:14:51:00 PST 2020
+
+[options]
+	-u display time in GMT
+	-d, --date display date string in format of date or past/future date
+	-s, --set set system date & time
+	-f, --file display date string present at each line of file in date & time format
+	-r display last modified timestamp of a datefile
+[+FORMAT]
+	%D	mm/dd/yy
+	%d	date of month
+	%a	abbreviated weekdays
+	%A	full weekdays
+	%h, %b	abbreviated month name
+	%B	full month name
+	%m	month of year
+	%y	last 2 digits of year	
+	%Y	4 digits year
+	%T	hh/mm/ss
+	%H	hour
+	%M	minute
+	%S	second
+
+hostname -[option] [file]
+display hostname
+$hostname
+output
+ubuntu
+
+	-a	get alias name of the host system
+	-A	get all fully qualified domain name of the host system
+	-b	set hostname
+	-d	get domain
+	-f	get fully qualified domain name
+	-F	set the hostname in a file
+	-i	get the IP addresses
+	-I	get all IP addresses
+	-s	get the hostname in short
+	-V	get version
+	
+arch [option]
+display computer architecture
+
+$arch
+output
+x86_x64
+
+	-help display help info
+	-version display version info
+
+uname [option]
+DESCRIPTION Print certain system information. With no OPTION, same as -s.
+
+$uname
+output
+Linux
+
+	-a, --all print all information, in the following order, except omit -p and -i if unknown:
+	-s, --kernel-name print the kernel name
+	-n, --nodename print the network node hostname
+	-r, --kernel-release print the kernel release
+	-v, --kernel-version print the kernel version
+	-m, --machine print the machine hardware name
+	-p, --processor print the processor type or "unknown"
+	-i, --hardware-platform print the hardware platform or "unknown"
+	-o, --operating-system print the operating system
+
+dmesg [option]
+display or control kernel ring buffer
+
+$dmesg
+output
+realy long and both my pc and laptop keep freezing when i scroll up
+	-C, --clear clear kernel ring buffer
+	-c, --read-clear read & clear all messages
+	-D, --console-off disable printing messages
+	-E, --console-off enable printing messages
+	-F, --file [file] use the file instead of kernel log
+	-f, --facility [list] restrict output to defined facilities
+	-H, --human human readable output
+	-k, --kernel display kernel messages
+	-L, --color colorize messages
+	-l, --level [list] restrict output to defined levels
+	-n, --console-level [level] set level of messages print to console-level
+	-P, --nopager not pipe output into a pager
+	-r, --raw print raw message buffer
+	-s, --syslog force to use sys
+
+uptime [option]
+show runing time 
+
+$uptime
+output
+14:59:35 up 2:36, 1 user, load average: 0.00, 0.00, 0.00
+	-p, --pretty show uptime in better format
+	-s, --system up since
+
+whoami
+print the user name
+
+$whoami
+output
+pc1
+
+who [option] [FILE | ARG1 ARG2]
+print information user who are logged in
+
+$who
+output
+pc1		:0		2020 - 01 -14 12:23 (:0)
+
+	-b, --boot print last system boot
+	-d, --dead print dead processes
+	-q, --count all login names & No of users logged on
+	-n, --name print name instead of No
+	-r, --real real ID instead of effective ID
+	-u, --user only effective ID
+	-z, --zero delimit entries with NUL char
+	
+id [option] [user]
+print user and group information for specified user or current user
+
+$id
+output
+uid=1000(pc1) gid=1000(pc1) groups=1000(pc1), 4(am), 24(cdrom), 27(sudo), 30(dip), 46(plugdev), 116(lpadmin), 126(sambashare)
+	-a ignore
+	-Z, --context only security context of process
+	-g, --group only effective group ID
+	-G, --groups all group IDs
+	-n, --name 
+
+last [option] [username] [tty]
+show a listing of last logged in users
+
+$last
+output
+pc1		:0			:0					Tue Jan 14 12:23	still logged in
+reboot 	system boot	5.0.0-23-generic 	Tue Jan 14 12:23	still running
+
+wtmp begins Tue Jan 14 12:23:12 2020
+
+	-[number] number of line show
+	-a, --hostlast display hostnames in last column
+	-d, --dns translate IP into a hostname
+	-f, --file show last logged of a file
+	-F, --fulltimes print full login logout info
+	-i, --ip display IP
+	-n, --limit [number] number of lines to show
+	-R, --nohostname not display hostname
+	-s, --since [time] display lines since the time
+	-t, --until [times] display lines until the time
+	-p, --present [times] display who were present
+	-w, --fullnames display full user & domain names
+	-x, --system display system shutdown entries & run level changes
+	--time-format [format] show timestamps in specified format
+	
+w [option]
+show who is logged on and what they are doing
+
+#w
+output
+ 15:06:50 up 2:23, 1 user, load average: 0.00, 0.00, 0.00
+ USER	TTY 	FROM	LOGIN@	IDLE	JCPU	PCPU	WHAT
+ pc1	:0		:0		12:23	?xdm?	22.12s	0.01s	/usr/lib/gdm3/

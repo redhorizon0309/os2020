@@ -1,0 +1,41 @@
+$ grep pc1 /etc/passwd
+To search text or search a file for lines containing matching given string or words
+output:
+pc1:x:1000:1000:Test pc,,,:/home/pc1:/bin/bash
+
+$wc /etc/passwd
+output number of lines, words, bytes and filename
+output:
+	41	70	242	/etc/passwd
+
+$ free
+output include total of memory can be used by apps, used memory, unused memory, 
+shared, combined memory of kernel buffer, cache & slabs and estimation of memory available of memory and swap
+
+output:
+		total		used		free	shared		buff/cache		available
+Mem:	2013428		1088296		340380	9148		584752			745212
+Swap:	969960		0			969960	
+
+$cat /proc/cpuinfo
+to get CPU information
+output:
+processor	:0
+venfor_id	:GenuineIntel
+cpu family	:6
+model		:94
+model name	:Intel(R) Core(TM) i3-6100 CPU @ 3.70GHz
+stepping	:3
+microcode	:0xc6
+cpu MHz		:3696.002
+cache size	:3072 KB
+physical id	:0
+...
+
+$find /home/pc1/Destop -name *.jpg
+to locate a file or a type of file by name or extention
+output:
+/home/pc1/Desktop/linklist.jpg
+/home/pc1/Desktop/grocerylist.jpg
+/home/pc1/Desktop/list.jpg
+(I have create 3 file as example with name as above on desktop for presentation)

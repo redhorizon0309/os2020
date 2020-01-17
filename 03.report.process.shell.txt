@@ -1,0 +1,38 @@
+$ps aux
+display all running proccess
+[option]
+	a all processes
+	u all processes on terminal including other users
+	x processes without controlling ttys
+output:
+User	PID	%CPU  %MEM 	  VSZ 	  RSS 	TTY STAT	START	 TIME 	COMMAND
+root	1	  0.0	  0.4		1559884	  9108	?		Ss		06.25	0:01	/sbin/init auto n	
+root	2	  0.0	  0.4		1559884	  9108	?		S		  06.25	0:01	[kthreadd]
+root	3	  0.0	  0.4		1559884	  9108	?		I<		06.25	0:01	[rcu_gp]
+root	4	  0.0	  0.4		1559884	  9108	?		I<		06.25	0:01	[rcu_par_gp]
+root	6	  0.0	  0.4		1559884	  9108	?		I<		06.25	0:01	[kworker/0:0H-kb]
+root	8	  0.0	  0.4		1559884	  9108	?		I<		06.25	0:01	[mm_percpu_wp]
+root	9	  0.0	  0.4		1559884	  9108	?		S		  06.25	0:01	[ksoftirqd/0]
+root	10	0.0	  0.4		1559884	  9108	?		I		  06.25	0:01	[rcu_sched]
+root	11	0.0	  0.4		1559884	  9108	?		S		  06.25	0:01	[migration/0]
+
+$ gnome-calculator
+to start a new proccess, just type the designated name in this case is for calculator
+output:
+the calculator window popup
+
+$ps aux|prep gnome-calculator
+show the proccess just created above which is the calculator
+output:
+pc1		2431	1.0	1.9	861360	39480	pts/1	Sl+	07:48	0:02	gnome-calculator
+pc1		2679	0.0	0.0	21532	  952		pts/2	S+	07:52	0:00	grep --color= auto gnome-calculator
+
+$ ps 2431
+show process status of gnome-calculator (id 2431, as we found out from the previous output)
+output:
+PID		TTY		STAT	TIME	COMMAND
+2431	pts/1	Sl+		0:02	gnome-calculator
+
+$kill -STOP 2431	pause calculator process, none comeup if you try to click
+$kill -CONT 2431	resume calculator process,	the input previous to the resume will show up
+$kill -KILL 2431	terminate calculator proccess, close the calculator 

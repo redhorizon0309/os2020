@@ -13,9 +13,9 @@ output include total of memory can be used by apps, used memory, unused memory,
 shared, combined memory of kernel buffer, cache & slabs and estimation of memory available of memory and swap
 
 output:
-		total		used		free	shared		buff/cache		available
-Mem:	2013428		1088296		340380	9148		584752			745212
-Swap:	969960		0			969960	
+		total		used		free		shared		buff/cache		available
+Mem:		2013428		1088296		340380		9148		584752			745212
+Swap:		969960		0		969960	
 
 $cat /proc/cpuinfo
 to get CPU information

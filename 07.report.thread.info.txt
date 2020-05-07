@@ -1,0 +1,7 @@
+
+red@ubuntu:~$ pidof firefox
+48166 48122 48098 48055 48008
+
+red@ubuntu:~$ ps -o nlwp 48166
+NLWP
+  18
